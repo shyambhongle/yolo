@@ -5,9 +5,9 @@ import JackpotList from './JackpotList';
 import TopBlurLayer from './TopBlurLayer';
 import BottomBlurLayer from './BottomBlurLayer';
 import Celebration from './Celebration';
-import AwesomeAlert from 'react-native-awesome-alerts';
 import {useToast} from 'react-native-toast-notifications';
 import phrases from '../../../db/looserDb';
+import JackpotPopup from './JackpotPopup';
 
 const UpFrame = require('../../assets/images/upFrame.png');
 const DownFrame = require('../../assets/images/downFrame.png');
@@ -63,18 +63,7 @@ const Jacpot = () => {
         <TopBlurLayer />
       </View>
       <JackpotBtn cb={handleSpin} />
-      <AwesomeAlert
-        show={result === 'popup'}
-        showProgress={false}
-        title="Winner🎉"
-        message="You have won 500💰"
-        closeOnTouchOutside={false}
-        closeOnHardwareBackPress={false}
-        showConfirmButton={true}
-        confirmText="Collect"
-        confirmButtonColor="#008000"
-        onConfirmPressed={reset}
-      />
+      <JackpotPopup show={result === 'popup'} reset={reset} />
       {result === 'won' && <Celebration />}
     </View>
   );
