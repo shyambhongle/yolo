@@ -2,7 +2,11 @@ import {StyleSheet, View} from 'react-native';
 import AwesomeButton from 'react-native-really-awesome-button';
 import React from 'react';
 
-const JackpotBtn = () => {
+interface Props {
+  cb: () => void;
+}
+
+const JackpotBtn = (props: Props) => {
   return (
     <View style={styles.container}>
       <AwesomeButton
@@ -10,6 +14,7 @@ const JackpotBtn = () => {
         backgroundColor="#A90808"
         raiseLevel={10}
         textColor="#f5f2eb"
+        onPressedOut={props.cb}
         backgroundDarker="#4F0909">
         SPIN NOW
       </AwesomeButton>

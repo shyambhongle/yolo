@@ -1,6 +1,9 @@
 import {StyleSheet, Image, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import JackpotBtn from './JackpotBtn';
+import JackpotList from './JackpotList';
+import TopBlurLayer from './TopBlurLayer';
+import BottomBlurLayer from './BottomBlurLayer';
 
 const UpFrame = require('../../assets/images/upFrame.png');
 const DownFrame = require('../../assets/images/downFrame.png');
@@ -8,6 +11,13 @@ const LeftFrame = require('../../assets/images/leftFrame.png');
 const RightFrame = require('../../assets/images/rightFrame.png');
 
 const Jacpot = () => {
+  const [spin, setSpin] = useState(false);
+  const handleSpin = () => {
+    setSpin(() => true);
+    setTimeout(() => {
+      setSpin(() => false);
+    }, 4000);
+  };
   return (
     <View style={styles.container}>
       <View style={styles.frameWrapper}>
@@ -15,8 +25,11 @@ const Jacpot = () => {
         <Image source={DownFrame} style={styles.bottomframe} />
         <Image source={LeftFrame} style={styles.leftframe} />
         <Image source={RightFrame} style={styles.rightframe} />
+        <JackpotList spin={spin} />
+        <BottomBlurLayer />
+        <TopBlurLayer />
       </View>
-      <JackpotBtn />
+      <JackpotBtn cb={handleSpin} />
     </View>
   );
 };
@@ -35,6 +48,7 @@ const styles = StyleSheet.create({
     height: 222.3,
     position: 'relative',
     backgroundColor: '#000',
+    justifyContent: 'center',
   },
   upframe: {
     width: 326,
