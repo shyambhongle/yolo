@@ -5,26 +5,22 @@ import {FlashList} from '@shopify/flash-list';
 
 interface Props {
   timing: number;
-  spin: boolean;
+  spin: number;
 }
 const data = Array.from({length: 100}, (v, i) => ({id: i + 1}));
 
 const SingleList = (props: Props) => {
   const flatlistRef = useRef<FlatList>(null);
   useEffect(() => {
-    if (props.spin) {
-      setTimeout(() => {
-        spin();
-      }, props.timing);
-    }
+    setTimeout(() => {
+      spin();
+    }, props.timing);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.spin]);
 
   const spin = () => {
-    const selectedIndex = Math.floor(Math.random() * 97);
-
     flatlistRef.current?.scrollToIndex({
-      index: selectedIndex,
+      index: props.spin,
       animated: true,
     });
   };

@@ -14,7 +14,7 @@ const JackpotBtn = (props: Props) => {
         backgroundColor="#A90808"
         raiseLevel={10}
         textColor="#f5f2eb"
-        onPressedOut={props.cb}
+        onPress={props.cb}
         backgroundDarker="#4F0909">
         SPIN NOW
       </AwesomeButton>
