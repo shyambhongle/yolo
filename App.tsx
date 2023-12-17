@@ -1,7 +1,7 @@
 import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
 import React from 'react';
-import Home from './src/screen/Home';
 import {ToastProvider} from 'react-native-toast-notifications';
+import Home from './src/screen/Home';
 
 const App = () => {
   return (
