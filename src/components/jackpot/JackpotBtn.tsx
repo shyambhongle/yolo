@@ -18,7 +18,6 @@ const JackpotBtn = (props: Props) => {
         backgroundDarker="#4F0909">
         SPIN NOW
       </AwesomeButton>
-      <View style={styles.shadowPart} />
     </View>
   );
 };

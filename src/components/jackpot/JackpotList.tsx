@@ -21,7 +21,6 @@ const JackpotList = (props: Props) => {
     const i2 = Math.floor(Math.random() * 97);
     const i3 = Math.floor(Math.random() * 97);
     setTi([i1, i2, i3]);
-
     setTimeout(() => {
       const r1 = resultCheck(i1);
       const r2 = resultCheck(i2);

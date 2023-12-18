@@ -8,11 +8,18 @@ import Celebration from './Celebration';
 import {useToast} from 'react-native-toast-notifications';
 import phrases from '../../../db/looserDb';
 import JackpotPopup from './JackpotPopup';
+var Sound = require('react-native-sound');
 
 const UpFrame = require('../../assets/images/upFrame.png');
 const DownFrame = require('../../assets/images/downFrame.png');
 const LeftFrame = require('../../assets/images/leftFrame.png');
 const RightFrame = require('../../assets/images/rightFrame.png');
+
+Sound.setCategory('Playback');
+
+var one = new Sound('one.mp3', Sound.MAIN_BUNDLE);
+var two = new Sound('two.mp3', Sound.MAIN_BUNDLE);
+var four = new Sound('four.mp3', Sound.MAIN_BUNDLE);
 
 const Jacpot = () => {
   const [spin, setSpin] = useState(false);
@@ -20,6 +27,7 @@ const Jacpot = () => {
   const toast = useToast();
 
   const handleSpin = () => {
+    four.play();
     setResult('try');
     setSpin(() => true);
     setTimeout(() => {
@@ -30,11 +38,13 @@ const Jacpot = () => {
   const handleResult = (r: string) => {
     setResult(r);
     if (r === 'won') {
+      one.play();
       setTimeout(() => {
         setResult('popup');
       }, 2000);
     }
     if (r === 'loose') {
+      two.play();
       selectRandomPhrase();
       setTimeout(() => {
         setResult('try');

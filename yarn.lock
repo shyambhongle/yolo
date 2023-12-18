@@ -5668,6 +5668,11 @@ react-native-sound@^0.11.2:
   resolved "https://registry.yarnpkg.com/react-native-sound/-/react-native-sound-0.11.2.tgz#e542dc5b9e16ab4b3ac7e6eaddb1fc8d98da9038"
   integrity sha512-LmGc8lgOK3qecYMVQpyHvww/C+wgT6sWeMpVbOe4NCRGC2yKd4fo4U0KBUo9PO7AqKESO3I/2GZg1/C0+bwiiA==
 
+react-native-system-navigation-bar@^2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/react-native-system-navigation-bar/-/react-native-system-navigation-bar-2.6.3.tgz#455ff2c8d3a4b41d95c39b4112c402fb4a20ab0a"
+  integrity sha512-QzKVdIkDfwziJQA5PEHPJhT2/WCioWaNaXOg0HpzLAX5XlSdirnfz3riWJB9Zrj/RdWIt+qZGihkw5zTdYA3uA==
+
 react-native-toast-notifications@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/react-native-toast-notifications/-/react-native-toast-notifications-3.4.0.tgz#9f2c79ec80fba4af6b788ecddf704f94cf21dbc2"
